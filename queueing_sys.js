@@ -10,21 +10,55 @@ class QueueingSys{
 
     testIfPoissonDistribution(){}
 
-    findAvgNumOfItemInSys(){}
+    findAvgNumOfItemInSys(){
+        return (this.findTrafficIntensity()/(1 - this.findTrafficIntensity));
+    }
+    /**
+     * Average number of elements in the queue when there is queue 
+     * @return number
+     */
+    avgNumOfElementsQueueExists(){
+        return (1/(1 - this.findTrafficIntensity()));
+    }
 
-    findAvgNumOfElementsInQueue(){}
+    /**
+     * Average number of elements in the queue including when there's queue or no queue
+     * @return number
+     */
+    avgNumOfElementsQueueNotExist(){
+        var p = this.findTrafficIntensity();
+        return (Math.power(p, 2)/(1 - p));
+    }
 
-    findAvgTimeInQueue(){}
+    avgTimeInQueue(){}
 
-    findAvgTimeInSys(){}
+    avgTimeInSys(){}
 
-    //probability of queueing on arrival equals traffic intensity
+    /**
+     * Note: probability of queueing on arrival equals traffic intensity
+     */
 
-    findProbOfNotQueueingOnArrival(){}
+    probOfNotQueueingOnArrival(){
+        return (1 - this.findTrafficIntensity());
+    }
 
-    findProbOfNEelementsInSysAtTime(){}
+    
+    findProbOfNEelementsInSysAnyTime(n){
+        var p = this.findTrafficIntensity();
+        return (1 - p)* Math.pow(p, n);
+    }
 
-    findProbOfNOrMoreElementsInSys(){}
+    findProbOfNOrMoreElementsInSys(n){
+        return Math.pow(p, n);
+    }
+
+    sysHandler(){
+
+    }
 
 
 }
+
+var test = new QueueingSys(1, 2);
+console.log(test.findTrafficIntensity());
+console.log(test.avgNumOfElementsQueueExists());
