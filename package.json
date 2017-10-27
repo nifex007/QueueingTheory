@@ -1,0 +1,27 @@
+{
+  "name": "queueingtheory",
+  "version": "1.0.0",
+  "description": "Implementation of queueing theory algorithm in operations research",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nifex007/QueueingTheory.git"
+  },
+  "keywords": [
+    "operations-research",
+    "algorithms",
+    "queues"
+  ],
+  "author": "Nifemi Sola-Ojo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nifex007/QueueingTheory/issues"
+  },
+  "homepage": "https://github.com/nifex007/QueueingTheory#readme",
+  "dependencies": {
+    "yargs": "^10.0.3"
+  }
+}
